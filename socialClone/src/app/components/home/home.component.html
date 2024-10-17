@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <h1 class="text-center text-warning likeStiky">LIKE:{{ like }}</h1>
+    <div
+      class="col-lg-4 col-md-6 col-sm-12 mb-4"
+      *ngFor="let foto of fotoArray"
+    >
+      <div class="card">
+        <img [src]="foto.thumbnailUrl" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">{{ foto.title }}</h5>
+          <button type="button" (click)="counter(foto.id)" class="btn btn-info">
+            Like
+          </button>
+          <button
+            type="button"
+            (click)="removePhoto(foto)"
+            class="btn btn-danger ms-3"
+          >
+            Elimina
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
